@@ -23,9 +23,11 @@ public class PersonSet implements PersonList
 
     public String toString()
     {
-        String result = "";
+        //TODO(1)
+        //Maybe add a Header Print here w/ Name: Height(cm/in): Weight(kg/lbs):
+        String result = String.format("%-8s%-16s%-8s\n","Name:", "Height(cm):", "Weight(kg):");
         for (Person p : people)
-            result += p.toString() + "\n";
+            result += p.toString();
         return result;
     }
 

@@ -12,10 +12,12 @@ public class Person
         this.weight = weight;
     } //Person()
 
+    //Formatting doesn't really work w/ names longer than 7 char.
+    //I'd solve this by finding the longest name and using that .length for the formatting somehow
     @Override
     public String toString()
     {
-        return (this.name + ", " + this.height + ", " + this.weight);
+        return String.format("%-8s%-16s%-8s\n", this.name, this.height, this.weight);
     }// toString()
 
     public double getHeight()

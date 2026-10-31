@@ -60,7 +60,7 @@ public class Main
 					double height = fileReader.nextDouble();
 					double weight = fileReader.nextDouble();
 					Person inputPerson = new Person(name, height, weight);
-					System.out.println(inputPerson.toString()); //Only here for console output, will print duplicates
+					System.out.print(inputPerson.toString()); //Only here for console output, will print duplicates
 					javaClass.personAdd(inputPerson); //This method checks for duplicates and does NOT add them to the ArrayList<Person>
 				}
 				System.out.println("Creating Output File...");
