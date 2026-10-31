@@ -1,4 +1,8 @@
 /*
+Name: Russell Brown
+Purpose: Work with / learn about inheritance, polymorphism, interfaces, and file I/O.
+Date: 10/30/26
+
 This code is provided to give you a
 starting place. It should be modified.
 No further imports are needed.
@@ -38,22 +42,34 @@ public class Main
 {
 	public static void main(String[] args) 
 	{
+		//TODO
+		//instantiate a PersonOrderedSet and a PersonImperialSet, instead of the PersonSet.
+		//Read in the data from the file, use it to populate both set objects with Persons,
+		//	and then write out the data into two separate output files (one ordered and one imperial).
+		//adding methods to the classes to get the data in a text format for writing to file. Think I already did this?
+		//Output the formatted data with header to two separate files
+		//output the ordered data and the imperial data to the screen/console,
+		//	nicely formatted in rows and labeled columns
 
 		Person Maxwell = new Person("Maxwell", 167, 98.4); //test
 
 		PersonSet javaClass = new PersonSet(); //test?
 
+		//Tries to find hr.txt and create outputfile.txt, then runs a while loop.
 		try
 		{
-
 			File file = new File("hr.txt");
 			Scanner fileReader = new Scanner(file);
 			System.out.println(fileReader.nextLine()); //prints header into the console
+
 			try
 			{
 
 				FileWriter fileWriterOrder = new FileWriter("outputfile.txt");
 
+				//Scans each line, pulls name, height, weight and creates a new person object w/ them
+				//then prints that person.toString(), and adds that person to an ArrayList<Person>
+				//After finished scanning, calls the ArrayList<Person>.toString() and writes that to output.txt
 				while(fileReader.hasNext())
 				{
 					String name = fileReader.next();
