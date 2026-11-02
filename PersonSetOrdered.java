@@ -15,4 +15,15 @@ public class PersonSetOrdered extends PersonSet
     - May also look up and modify a bubble-sort
         or other sorting technique for solving this problem.
      */
+
+    @Override
+    public void personAdd(Person p)
+    {
+        //figure out which location would be sorted then add there
+    }
+
+    private static void sort()
+    {
+
+    }
 }//class PersonSetOrdered

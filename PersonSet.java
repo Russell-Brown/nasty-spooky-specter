@@ -28,7 +28,7 @@ public class PersonSet implements PersonList
     // then returns the result string.
     public String toString()
     {
-        String result = String.format("%-8s%-16s%-8s\n","Name:", "Height(cm):", "Weight(kg):");
+        String result = String.format("%-8s%-16s%-8s\n","Name:", "Height:", "Weight:");
         for (Person p : people)
             result += p.toString();
         return result;

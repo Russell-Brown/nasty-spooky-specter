@@ -35,17 +35,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-//1 kg = 2.20462 lbs
-//1 cm = .393701
-
 public class Main 
 {
 	public static void main(String[] args) 
 	{
 		//TODO
-		//instantiate a PersonOrderedSet and a PersonImperialSet, instead of the PersonSet.
-		//Read in the data from the file, use it to populate both set objects with Persons,
-		//	and then write out the data into two separate output files (one ordered and one imperial).
 		//adding methods to the classes to get the data in a text format for writing to file. Think I already did this?
 		//Output the formatted data with header to two separate files
 		//output the ordered data and the imperial data to the screen/console,
@@ -53,7 +47,8 @@ public class Main
 
 		Person Maxwell = new Person("Maxwell", 167, 98.4); //test
 
-		PersonSet javaClass = new PersonSet(); //test?
+		PersonSetOrdered sortedSet = new PersonSetOrdered();
+		PersonSetImperial imperialSet = new PersonSetImperial();
 
 		//Tries to find hr.txt and create outputfile.txt, then runs a while loop.
 		try
@@ -65,7 +60,8 @@ public class Main
 			try
 			{
 
-				FileWriter fileWriterOrder = new FileWriter("outputfile.txt");
+				FileWriter imperialSetWriter = new FileWriter("hr_imperial_set_output.txt");
+				FileWriter orderedSetWriter = new FileWriter("hr_ordered_set_output.txt");
 
 				//Scans each line, pulls name, height, weight and creates a new person object w/ them
 				//then prints that person.toString(), and adds that person to an ArrayList<Person>
@@ -75,14 +71,17 @@ public class Main
 					String name = fileReader.next();
 					double height = fileReader.nextDouble();
 					double weight = fileReader.nextDouble();
-					Person inputPerson = new Person(name, height, weight);
-					System.out.print(inputPerson.toString()); //Only here for console output, will print duplicates
-					javaClass.personAdd(inputPerson); //This method checks for duplicates and does NOT add them to the ArrayList<Person>
+					Person inputPersonImp = new Person(name, height, weight);
+					Person inputPersonSort = new Person(name, height, weight);
+					//System.out.print(inputPersonSort.toString()); //Only here for console output, will print duplicates
+					imperialSet.personAdd(inputPersonImp);
+					sortedSet.personAdd(inputPersonSort);
 				}
-				System.out.println("Creating Output File...");
-				fileWriterOrder.write(javaClass.toString());
-				System.out.println("Duplicates Found: " + javaClass.duplicateGet());
-				fileWriterOrder.close();
+				System.out.println("Creating Output Files...");
+				imperialSetWriter.write(imperialSet.toString());
+				orderedSetWriter.write(sortedSet.toString());
+				imperialSetWriter.close();
+				orderedSetWriter.close();
 			}
 			catch(IOException e)
 			{

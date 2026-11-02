@@ -21,7 +21,7 @@ public class Person
     @Override
     public String toString()
     {
-        return String.format("%-8s%-16s%-8s\n", this.name, this.height, this.weight);
+        return String.format("%-8s%-16.6s%-8.6s\n", this.name, this.height, this.weight);
     }// toString()
 
     //Returns height
@@ -35,6 +35,11 @@ public class Person
     {
         return this.weight;
     }//getWeight()
+
+    public String getName()
+    {
+        return this.name;
+    }
 
     //Sets height
     public void setHeight(double height)
